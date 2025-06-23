@@ -7,7 +7,7 @@ def get_binance_ohlcv():
     client = Client(API_KEY, API_SECRET)
     client.FUTURES_URL = 'https://testnet.binancefuture.com/fapi'
     client.FUTURES_API_URL = 'https://testnet.binancefuture.com/fapi'
-    klines = client.futures_klines(symbol=SYMBOL, interval=INTERVAL, limit=100)
+    klines = client.futures_klines(symbol=SYMBOL, interval=INTERVAL, limit=500)
     df = pd.DataFrame(klines, columns=[
         'Open time', 'Open', 'High', 'Low', 'Close', 'Volume',
         'Close time', 'Quote asset volume', 'Number of trades',
